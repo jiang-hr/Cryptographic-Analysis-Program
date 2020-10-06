@@ -2,9 +2,17 @@
 //
 
 #include <iostream>
+#include "IntModP.hpp"
+#include "bigint/BigInteger.hh"
+#include "bigint/BigIntegerUtils.hh"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	auto a = stringToBigInteger("11451419198101145141145141919810");
+	cryp::IntModP<BigInteger, 735001> b(a);
+	cout << a << " * " << b.number_theoretic_reciprocal() 
+		<< " % " << b.mod << " = " << b * b.number_theoretic_reciprocal() % b.mod << endl;
 }
 
