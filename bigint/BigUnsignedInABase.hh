@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BIGUNSIGNEDINABASE_H
 #define BIGUNSIGNEDINABASE_H
 

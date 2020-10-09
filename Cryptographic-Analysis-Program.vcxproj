@@ -146,8 +146,10 @@
     <ClCompile Include="bigint\BigUnsigned.cc" />
     <ClCompile Include="bigint\BigUnsignedInABase.cc" />
     <ClCompile Include="Cryptographic-Analysis-Program.cpp" />
+    <ClCompile Include="cyclical.hh" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ELGamal.hpp" />
     <ClInclude Include="IntModP.hpp" />
     <ClInclude Include="bigint\BigInteger.hh" />
     <ClInclude Include="bigint\BigIntegerAlgorithms.hh" />

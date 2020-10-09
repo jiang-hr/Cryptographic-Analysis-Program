@@ -5,14 +5,30 @@
 #include "IntModP.hpp"
 #include "bigint/BigInteger.hh"
 #include "bigint/BigIntegerUtils.hh"
+#include "cyclical.hh"
+#include "IntModP.hpp"
+#include "ELGamal.hpp"
 
 using namespace std;
+using namespace cryp;
+
+void textIntModP();
 
 int main()
 {
-	auto a = stringToBigInteger("11451419198101145141145141919810");
-	cryp::IntModP<BigInteger, 735001> b(a);
-	cout << a << " * " << b.number_theoretic_reciprocal() 
-		<< " % " << b.mod << " = " << b * b.number_theoretic_reciprocal() % b.mod << endl;
+	textIntModP();
+	textELGamal();
 }
 
+
+void textIntModP()
+{
+	BigInteger a = stringToBigInteger("114514191981011451411451419198101");
+	cryp::IntModP<BigInteger> b(2, a);
+	cryp::IntModP<BigInteger> c(6, a);
+	cryp::IntModP<BigInteger> t = pow(b, a);
+	std::cout << c << " * " << c.number_theoretic_reciprocal() <<
+		" = " << c * c.number_theoretic_reciprocal() << std::endl;
+	auto t_c = t / c;
+	std::cout << t << " = " << t_c << " * " << c << " = " << t_c * c << std::endl;
+}
